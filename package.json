@@ -1,0 +1,17 @@
+{
+  "name": "osu-fun",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/start.js",
+  "dependencies": {
+    "@types/node": "^9.6.0",
+    "electron": "^1.8.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "electron .",
+    "test": "jest"
+  },
+  "author": "zede",
+  "license": "ISC"
+}
