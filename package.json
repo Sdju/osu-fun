@@ -4,12 +4,34 @@
   "description": "",
   "main": "dist/start.js",
   "dependencies": {
-    "@types/node": "^9.6.0",
-    "electron": "^1.8.4"
+    "axios": "^0.18.0",
+    "electron": "^1.8.4",
+    "i18n": "^0.8.3",
+    "vue": "^2.5.16",
+    "vue-class-component": "^6.2.0",
+    "vue-devtools": "^3.1.9",
+    "vue-property-decorator": "^6.0.0",
+    "vue-router": "^3.0.1",
+    "winreg": "^1.2.4"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/node": "^9.6.0",
+    "@types/winreg": "^1.2.30",
+    "css-loader": "^0.28.11",
+    "pug": "^2.0.3",
+    "pug-loader": "^2.3.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "ts-loader": "^4.1.0",
+    "typescript": "^2.7.2",
+    "vue-loader": "^14.2.2",
+    "vue-template-compiler": "^2.5.16",
+    "webpack": "^4.2.0"
+  },
   "scripts": {
     "start": "electron .",
+    "build": "webpack building",
     "test": "jest"
   },
   "author": "zede",
