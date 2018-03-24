@@ -14,7 +14,7 @@ fs.readdirSync('node_modules')
 module.exports = {
     entry: './src/client/index.ts',
     target: 'node',
-    watch: true,
+    watch: false, //(process.env.ONLY_BUILD !== 'true'),
     externals: nodeModules,
     output: {
         path: path.resolve(__dirname, 'dist', 'client'),
@@ -30,11 +30,6 @@ module.exports = {
                     optimizeSSR: false,
 
                     loaders: {
-                        // Since sass-loader (weirdly) has SCSS as its default parse mode, we map
-                        // the "scss" and "sass" values for the lang attribute to the right configs here.
-                        // other preprocessors should work out of the box, no loader config like this necessary.
-                        'scss': 'vue-style-loader!css-loader!sass-loader',
-                        'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax',
                     }
                     // other vue-loader options go here
                 }
