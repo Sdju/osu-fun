@@ -35,6 +35,7 @@
   "scripts": {
     "start": "electron .",
     "build": "webpack --mode=development",
+    "build-auto": "webpack --watch --mode=development",
     "test": "jest"
   },
   "author": "zede",
