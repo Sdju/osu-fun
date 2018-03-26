@@ -12,6 +12,8 @@
     "vue-devtools": "^3.1.9",
     "vue-property-decorator": "^6.0.0",
     "vue-router": "^3.0.1",
+    "vuex": "^3.0.1",
+    "vuex-typescript": "^3.0.2",
     "winreg": "^1.2.4"
   },
   "devDependencies": {
