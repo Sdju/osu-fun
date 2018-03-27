@@ -3,9 +3,12 @@ import {Store, StoreOptions, Plugin, install as VuexPlugin} from 'vuex'
 import App from '../components/App.vue'
 
 import {RootState} from './State'
+import {vueOsuPlugin} from '../osuhelper'
 import {aBind} from './atools'
 
 aBind(async ()=> {
+    await vueOsuPlugin.init();
+    Vue.use(vueOsuPlugin);
 
     Vue.config.productionTip = false;
     Vue.use(VuexPlugin);
