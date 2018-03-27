@@ -1,3 +1,6 @@
+import {Song} from '../osuhelper'
+
 export interface RootState {
-    osuPath: string
+    osuPath: string,
+    osuSongs: Array<Song>,
 }
