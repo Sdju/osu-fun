@@ -1,10 +1,21 @@
 <template lang="pug">
-    #app Hello World!
+    #app {{path}}
 </template>
 
 <script lang="ts">
-    export default {
-        name: "app"
+    import {Component, Vue} from 'vue-property-decorator'
+
+    @Component
+    export default class App extends Vue {
+        get path() {
+            return this.$store.state.osuPath;
+        }
+
+        mounted() {
+            if (this.$store.state.osuPath === '') {
+                this.$store.commit('setOsuPath', Vue.osu.path);
+            }
+        }
     }
 </script>
 
