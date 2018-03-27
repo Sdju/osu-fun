@@ -21,6 +21,7 @@
     "@types/node": "^9.6.0",
     "@types/winreg": "^1.2.30",
     "css-loader": "^0.28.11",
+    "electron-builder": "^20.8.0",
     "pug": "^2.0.3",
     "pug-loader": "^2.3.0",
     "stylus": "^0.54.5",
