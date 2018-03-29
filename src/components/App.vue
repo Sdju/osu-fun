@@ -1,5 +1,6 @@
 <template lang="pug">
     #app
+        WindowTitle
         | {{path}}
         .song(v-for="song in songs")
             | {{song}}
@@ -10,8 +11,13 @@
     import {Component, Vue} from 'vue-property-decorator'
     import {aBind} from '../client/atools'
     import {Song} from "../osuhelper";
+    import WindowTitle from './WindowTitle.vue'
 
-    @Component
+    @Component({
+        components: {
+            WindowTitle
+        }
+    })
     export default class App extends Vue {
         get path() {
             return this.$store.state.osuPath;
