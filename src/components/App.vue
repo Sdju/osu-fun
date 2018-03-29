@@ -1,10 +1,11 @@
 <template lang="pug">
     #app
         WindowTitle
-        | {{path}}
-        .song(v-for="song in songs")
-            | {{song}}
-            br/
+        .view-area
+            | {{path}}
+            .song(v-for="song in songs")
+                | {{song}}
+                br/
 </template>
 
 <script lang="ts">
@@ -44,4 +45,19 @@
 <style lang="stylus">
 body
     margin 0
+
+#app
+    height 100vh
+    display flex
+    flex-direction column
+    align-items stretch
+    justify-content stretch
+
+.window-title
+    flex-shrink 0
+
+.view-area
+    width 100%
+    flex 1 1 auto
+    overflow auto
 </style>
