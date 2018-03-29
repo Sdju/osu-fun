@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var fs = require('fs');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var nodeModules = {};
 fs.readdirSync('node_modules')
@@ -28,9 +29,7 @@ module.exports = {
                 loader: 'vue-loader',
                 options: {
                     optimizeSSR: false,
-
-                    loaders: {
-                    }
+                    extractCSS: true,
                     // other vue-loader options go here
                 }
             },
@@ -48,9 +47,22 @@ module.exports = {
                 options: {
                     name: '[name].[ext]?[hash]'
                 }
+            },
+            {
+                test: /\.(css|stylus)$/,
+                use: [{
+                    loader: "style-loader" // creates style nodes from JS strings
+                }, {
+                    loader: "css-loader" // translates CSS into CommonJS
+                }, {
+                    loader: "stylus-loader" // compiles Less to CSS
+                }]
             }
         ]
     },
+    plugins: [
+        new ExtractTextPlugin("style.css")
+    ],
     resolve: {
         extensions: ['.ts', '.js', '.vue', '.json'],
         alias: {
