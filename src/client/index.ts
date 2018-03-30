@@ -30,6 +30,9 @@ aBind(async ()=> {
             },
         },
         state: {
+            window: {
+                title: 'osu!fun',
+            },
             osuPath: '',
             osuSongs: [],
         },
