@@ -4,11 +4,15 @@ import App from '../components/App.vue'
 
 import {RootState} from './State'
 import {Song, vueOsuPlugin} from '../osuhelper'
+import {vueELectronPlugin} from './VueElectronPlugin'
 import {aBind} from './atools'
 
 aBind(async ()=> {
     await vueOsuPlugin.init();
     Vue.use(vueOsuPlugin);
+    await vueELectronPlugin.init();
+    Vue.use(vueELectronPlugin);
+
 
     Vue.config.productionTip = false;
     Vue.use(VuexPlugin);
